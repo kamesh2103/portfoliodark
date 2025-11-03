@@ -59,8 +59,8 @@ const works = [
       { name: "MongoDB", color: "text-green-400", icon: <Database className="w-4 h-4" /> },
       { name: "Node Js", color: "text-blue-400", icon: <Code className="w-4 h-4" /> },
     ],
-    source_code_link: "https://github.com/kamesh952/hotel_db.git",
-    live_link: "https://hotel-db-client.onrender.com/",
+    source_code_link: "https://github.com/kamesh952/Hotel_db_management.git",
+    live_link: "https://hotel-management-frontend-vrr0.onrender.com",
   },
   {
     id: 4,
