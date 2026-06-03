@@ -123,7 +123,7 @@ const works = [
       { name: "Gemini API", color: "text-blue-400", icon: <Cpu className="w-4 h-4" /> },
       { name: "React/vite", color: "text-cyan-400", icon: <Code className="w-4 h-4" /> },
     ],
-    source_code_link: "https://github.com/kamesh952/Kalm_ChatBot.git",
+    source_code_link: "https://github.com/kamesh2103/Kalm_ChatBot.git",
     live_link: "https://kamesh952.github.io/Kalm_ChatBot/",
   },
   {
