@@ -1,81 +1,79 @@
 import React, { useState, useEffect, useRef } from "react";
-import { 
-  Folder, 
-  Globe, 
-  Brain, 
-  Code, 
-  ExternalLink, 
-  Github, 
+import {
+  Folder,
+  Globe,
+  Brain,
+  Code,
+  ExternalLink,
+  Github,
   Star,
   Cpu,
   Database,
-  Image
+  Image as ImageIcon,
 } from "lucide-react";
 
 const works = [
   {
     id: 1,
-    name: "VisionText AI - Add text Behind Image",
+    name: "VisionText AI – Add Text Behind Image",
     description:
-      "An AI-powered application that intelligently places text behind objects in images using advanced computer vision and machine learning algorithms.",
+      "An AI-powered image editing application that places text behind objects in images using computer vision and intelligent image rendering techniques.",
     category: "ml",
-    image:
-      "main_image_1.webp",
+    image: "main_image_1.webp",
     tags: [
       { name: "HTML", color: "text-orange-400", icon: <Code className="w-4 h-4" /> },
       { name: "UI/UX", color: "text-purple-400", icon: <Globe className="w-4 h-4" /> },
-      { name: "Javascript", color: "text-yellow-400", icon: <Code className="w-4 h-4" /> },
-      { name: "Image Rendering", color: "text-green-400", icon: <Image className="w-4 h-4" /> },
+      { name: "JavaScript", color: "text-yellow-400", icon: <Code className="w-4 h-4" /> },
+      { name: "Image Rendering", color: "text-green-400", icon: <ImageIcon className="w-4 h-4" /> },
     ],
-    source_code_link: "https://github.com/kamesh952/visiontext.git",
+    source_code_link: "https://github.com/kamesh2103/visiontext.git",
     live_link: "https://visiontest-ai.onrender.com/",
   },
   {
     id: 2,
-    name: "Erase X Background Remover",
+    name: "Erase X – AI Background Remover",
     description:
-      "A powerful background removal tool using state-of-the-art AI models to precisely separate subjects from backgrounds with professional quality results.",
+      "An AI-powered background removal tool that separates foreground subjects from image backgrounds to produce clean, high-quality results.",
     category: "ml",
-    image:
-      "logo.png",
+    image: "logo.png",
     tags: [
       { name: "HTML", color: "text-orange-400", icon: <Code className="w-4 h-4" /> },
       { name: "UI/UX", color: "text-purple-400", icon: <Globe className="w-4 h-4" /> },
-      { name: "Javascript", color: "text-yellow-400", icon: <Code className="w-4 h-4" /> },
+      { name: "JavaScript", color: "text-yellow-400", icon: <Code className="w-4 h-4" /> },
       { name: "API Integration", color: "text-blue-400", icon: <Cpu className="w-4 h-4" /> },
     ],
-    source_code_link: "https://github.com/kamesh952/Erase-X.git",
+    source_code_link: "https://github.com/kamesh2103/Erase-X.git",
     live_link: "https://erase-x.onrender.com/",
   },
   {
     id: 3,
-    name: "Hotel Database Management-DBMS Project",
+    name: "Hotel Database Management System",
     description:
-      "A comprehensive database management system for hotels featuring room booking, customer management, and analytics with a modern React frontend.",
+      "A database management application for hotel operations, featuring room booking, customer management, and a React-based user interface.",
     category: "web",
     image: "https://images.pexels.com/photos/261102/pexels-photo-261102.jpeg",
     tags: [
       { name: "React", color: "text-cyan-400", icon: <Code className="w-4 h-4" /> },
       { name: "MongoDB", color: "text-green-400", icon: <Database className="w-4 h-4" /> },
-      { name: "Node Js", color: "text-blue-400", icon: <Code className="w-4 h-4" /> },
+      { name: "Node.js", color: "text-blue-400", icon: <Code className="w-4 h-4" /> },
     ],
-    source_code_link: "https://github.com/kamesh952/Hotel_db_management.git",
+    source_code_link: "https://github.com/kamesh2103/Hotel_db_management.git",
     live_link: "https://hotel-management-frontend-vrr0.onrender.com",
   },
   {
     id: 4,
-    name: "KalmAura - A MERN Stack Shopping Project",
+    name: "KalmAura – MERN Stack E-Commerce",
     description:
-      "A full-featured e-commerce platform built with the MERN stack, featuring user authentication, payment integration, and admin dashboard.",
+      "A full-stack e-commerce platform built with the MERN stack, featuring product browsing, user authentication, shopping functionality, and an admin interface.",
     category: "web",
     image: "https://images.pexels.com/photos/325876/pexels-photo-325876.jpeg",
     tags: [
       { name: "MongoDB", color: "text-green-400", icon: <Database className="w-4 h-4" /> },
       { name: "Node.js", color: "text-green-500", icon: <Code className="w-4 h-4" /> },
       { name: "Express.js", color: "text-gray-400", icon: <Code className="w-4 h-4" /> },
-      { name: "React (Vite)", color: "text-cyan-400", icon: <Code className="w-4 h-4" /> },
+      { name: "React + Vite", color: "text-cyan-400", icon: <Code className="w-4 h-4" /> },
     ],
-    source_code_link: "https://github.com/kamesh952/Kalm-Aura.git",
+    source_code_link: "https://github.com/kamesh2103/Kalm-Aura.git",
     live_link: "https://kalmaura-pi.vercel.app/",
     featured: true,
   },
@@ -83,120 +81,119 @@ const works = [
     id: 5,
     name: "Kalm Photo Editor",
     description:
-      "An advanced photo editing application with AI-enhanced features, filters, and professional-grade editing tools built with Python and Streamlit.",
+      "A Python-based photo editing application built with Streamlit and computer vision tools, offering image processing capabilities and editing features.",
     category: "ml",
     image:
       "https://media.istockphoto.com/id/1405395631/photo/professional-retoucher-working-on-graphic-tablet-at-desk-in-office.jpg?s=612x612&w=is&k=20&c=Oox3Ep4fnW3RvHt2Wc5znu9UWJaDYouE4zDAIVkRnbo=",
     tags: [
-      { name: "Python-Flask", color: "text-red-400", icon: <Code className="w-4 h-4" /> },
-      { name: "Python-Streamlit", color: "text-pink-400", icon: <Code className="w-4 h-4" /> },
-      { name: "Python-CV", color: "text-green-400", icon: <Cpu className="w-4 h-4" /> },
+      { name: "Python", color: "text-red-400", icon: <Code className="w-4 h-4" /> },
+      { name: "Streamlit", color: "text-pink-400", icon: <Code className="w-4 h-4" /> },
+      { name: "Computer Vision", color: "text-green-400", icon: <Cpu className="w-4 h-4" /> },
     ],
-    source_code_link: "https://github.com/kamesh952/Kalm_Photo_Editor.git",
+    source_code_link: "https://github.com/kamesh2103/Kalm_Photo_Editor.git",
     live_link: "https://kalmphotoeditor.streamlit.app/",
   },
   {
     id: 6,
-    name: "Convert iQ - Image format Converter",
+    name: "Convert iQ – Image Format Converter",
     description:
-      "A fast and efficient image format converter supporting multiple formats with batch processing capabilities and optimized compression algorithms.",
-    category: "ml",
+      "An image conversion tool designed to simplify image format changes, with support for multiple formats and an easy-to-use interface.",
+    category: "web",
     image:
       "https://content-management-files.canva.com/35bbc1b1-dc94-48c0-883f-1f0ffcb4fd8e/tools-feature_image-converter_lead_01_2x.jpg",
     tags: [
       { name: "HTML", color: "text-orange-400", icon: <Code className="w-4 h-4" /> },
       { name: "UI/UX", color: "text-purple-400", icon: <Globe className="w-4 h-4" /> },
-      { name: "Javascript", color: "text-yellow-400", icon: <Code className="w-4 h-4" /> },
+      { name: "JavaScript", color: "text-yellow-400", icon: <Code className="w-4 h-4" /> },
     ],
-    source_code_link: "https://github.com/kamesh952/convertiq.git",
+    source_code_link: "https://github.com/kamesh2103/convertiq.git",
     live_link: "https://convert-iq.onrender.com/",
   },
   {
     id: 7,
-    name: "AI Chatbot",
+    name: "Kalm AI – Conversational Chatbot",
     description:
-      "An intelligent conversational AI chatbot powered by Google's Gemini API with natural language processing capabilities and modern React interface.",
+      "An AI chatbot with a modern React interface that uses Google's Gemini API to generate conversational responses and support natural-language interactions.",
     category: "ml",
-    image:
-      "kalmai.jpg",
+    image: "kalmai.jpg",
     tags: [
       { name: "Gemini API", color: "text-blue-400", icon: <Cpu className="w-4 h-4" /> },
-      { name: "React/vite", color: "text-cyan-400", icon: <Code className="w-4 h-4" /> },
+      { name: "React + Vite", color: "text-cyan-400", icon: <Code className="w-4 h-4" /> },
     ],
     source_code_link: "https://github.com/kamesh2103/Kalm_ChatBot.git",
-    live_link: "https://kalm-chat-bot-phi.vercel.app/",
+    live_link: "https://kalm-i8mol02c4-kmmk.vercel.app",
   },
   {
     id: 8,
-    name: "FreshMart - An E-commerce Website",
+    name: "AI Disease Predictor",
     description:
-      "A comprehensive e-commerce platform for fresh groceries and products with real-time inventory management, secure payments, and user-friendly interface.",
-    category: "web",
-    image: "https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg",
+      "A machine learning-based symptom analysis application that estimates possible health conditions from user-provided symptoms and presents prediction results through a web interface.",
+    category: "ml",
+    image: "gem.png",
     tags: [
       { name: "React", color: "text-cyan-400", icon: <Code className="w-4 h-4" /> },
-      { name: "Node js", color: "text-green-500", icon: <Code className="w-4 h-4" /> },
-      { name: "Express js", color: "text-gray-400", icon: <Code className="w-4 h-4" /> },
-      { name: "MongoDB", color: "text-green-400", icon: <Database className="w-4 h-4" /> },
+      { name: "Python", color: "text-purple-400", icon: <Globe className="w-4 h-4" /> },
+      { name: "Machine Learning", color: "text-cyan-500", icon: <Cpu className="w-4 h-4" /> },
     ],
-    source_code_link: "https://github.com/kamesh952/fmart.git",
-    live_link: "https://fmart-frontend.onrender.com",
+    source_code_link: "https://github.com/kamesh2103/Disease_Predictor.git",
+    live_link: "https://symptom-checker-frontend-83hi.onrender.com/",
     featured: true,
   },
   {
     id: 9,
-    name: "Skill Sync AI - A Resume Analyzer AI",
+    name: "FreshMart – Grocery E-Commerce",
     description:
-      "An AI-powered resume analysis tool that provides intelligent feedback, skill gap analysis, and career recommendations using advanced NLP algorithms.",
-    category: "ml",
-    image: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg",
+      "A full-stack grocery shopping platform designed for product discovery and online shopping, with a React frontend and a Node.js, Express, and MongoDB backend.",
+    category: "web",
+    image: "https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg",
     tags: [
-      { name: "Node js", color: "text-green-500", icon: <Code className="w-4 h-4" /> },
-      { name: "Gemini API Integration", color: "text-blue-400", icon: <Cpu className="w-4 h-4" /> },
-      { name: "HTML", color: "text-orange-400", icon: <Code className="w-4 h-4" /> },
+      { name: "React", color: "text-cyan-400", icon: <Code className="w-4 h-4" /> },
+      { name: "Node.js", color: "text-green-500", icon: <Code className="w-4 h-4" /> },
+      { name: "Express.js", color: "text-gray-400", icon: <Code className="w-4 h-4" /> },
+      { name: "MongoDB", color: "text-green-400", icon: <Database className="w-4 h-4" /> },
     ],
-    source_code_link: "https://github.com/kamesh952/skillsync_ai.git",
-    live_link: "https://skillsync-ai-client.onrender.com/",
+    source_code_link: "https://github.com/kamesh2103/fmart.git",
+    live_link: "https://fmart-frontend.onrender.com",
   },
   {
     id: 10,
-    name: "Event Hub - An Event Management System",
+    name: "SkillSync AI – Resume Analyzer",
     description:
-      "A comprehensive event management platform with booking system, attendee management, and real-time notifications built with modern web technologies.",
+      "An AI-powered resume analysis platform that evaluates resume content, identifies relevant skills, highlights potential skill gaps, and provides career-oriented feedback.",
+    category: "ml",
+    image: "https://images.pexels.com/photos/590016/pexels-photo-590016.jpeg",
+    tags: [
+      { name: "Node.js", color: "text-green-500", icon: <Code className="w-4 h-4" /> },
+      { name: "Gemini API", color: "text-blue-400", icon: <Cpu className="w-4 h-4" /> },
+      { name: "HTML", color: "text-orange-400", icon: <Code className="w-4 h-4" /> },
+    ],
+    source_code_link: "https://github.com/kamesh2103/skill_sync_ai.git",
+    live_link: "https://skill-sync-ai-1-vjpi.onrender.com/",
+  },
+  {
+    id: 11,
+    name: "Event Hub – Event Management System",
+    description:
+      "An event management web application designed to support event discovery, booking workflows, attendee management, and event-related operations.",
     category: "web",
     image: "https://images.pexels.com/photos/1190298/pexels-photo-1190298.jpeg",
     tags: [
       { name: "React", color: "text-cyan-400", icon: <Code className="w-4 h-4" /> },
-      { name: "Node js", color: "text-green-500", icon: <Code className="w-4 h-4" /> },
-      { name: "Express js", color: "text-gray-400", icon: <Code className="w-4 h-4" /> },
+      { name: "Node.js", color: "text-green-500", icon: <Code className="w-4 h-4" /> },
+      { name: "Express.js", color: "text-gray-400", icon: <Code className="w-4 h-4" /> },
       { name: "PostgreSQL", color: "text-blue-600", icon: <Database className="w-4 h-4" /> },
     ],
-    source_code_link: "https://github.com/kamesh952/event.git",
+    source_code_link: "https://github.com/kamesh2103/event.git",
     live_link: "https://event-db-client.onrender.com/",
-  },
-  {
-    id: 11,
-    name: "Tourism E-commerce Website - A Tourism Booking Project",
-    description:
-      "A beautiful and responsive tourism booking platform featuring destination showcases, booking management, and travel planning tools.",
-    category: "web",
-    image: "https://images.pexels.com/photos/1285625/pexels-photo-1285625.jpeg",
-    tags: [
-      { name: "Front End", color: "text-cyan-400", icon: <Code className="w-4 h-4" /> },
-      { name: "UI/UX", color: "text-purple-400", icon: <Globe className="w-4 h-4" /> },
-      { name: "Vite/React", color: "text-cyan-500", icon: <Code className="w-4 h-4" /> },
-    ],
-    source_code_link: "https://github.com/kamesh952/Kalm_Holidays.git",
-    live_link: "https://kalmholidays.onrender.com/",
   },
 ];
 
 const WorkCard = ({ work, index, useHorizontalLayout, isFeaturedLayout }) => {
   const cardRef = useRef(null);
+  const touchTimerRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isTouched, setIsTouched] = useState(false);
-  const [touchTimer, setTouchTimer] = useState(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -215,23 +212,24 @@ const WorkCard = ({ work, index, useHorizontalLayout, isFeaturedLayout }) => {
     return () => observer.disconnect();
   }, [index]);
 
+  useEffect(() => {
+    return () => {
+      if (touchTimerRef.current) clearTimeout(touchTimerRef.current);
+    };
+  }, []);
+
   const isML = work.category === "ml";
 
   const handleTouchStart = () => {
     setIsTouched(true);
     setIsHovered(true);
 
-    if (touchTimer) clearTimeout(touchTimer);
+    if (touchTimerRef.current) clearTimeout(touchTimerRef.current);
 
-    const timer = setTimeout(() => {
+    touchTimerRef.current = setTimeout(() => {
       setIsTouched(false);
       setIsHovered(false);
     }, 3000);
-
-    setTouchTimer(timer);
-  };
-
-  const handleTouchEnd = () => {
   };
 
   if (isFeaturedLayout) {
@@ -244,7 +242,6 @@ const WorkCard = ({ work, index, useHorizontalLayout, isFeaturedLayout }) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
       >
         <div className="bg-gray-900 rounded-3xl w-full relative overflow-hidden transition-all duration-500 hover:scale-[1.01] md:hover:shadow-2xl flex flex-col border-2 border-transparent hover:border-purple-500">
           <div className="absolute inset-0 rounded-3xl p-[3px] bg-gradient-to-r from-yellow-400 via-purple-500 to-pink-500 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
@@ -291,7 +288,7 @@ const WorkCard = ({ work, index, useHorizontalLayout, isFeaturedLayout }) => {
               </p>
 
               <div className="flex flex-wrap gap-3 mb-6">
-                {work.tags.map((tag, tagIndex) => (
+                {work.tags.map((tag) => (
                   <span
                     key={`${work.name}-${tag.name}`}
                     className={`text-base font-medium ${tag.color} bg-gray-800/90 px-4 py-2 rounded-full flex items-center gap-2`}
@@ -331,7 +328,7 @@ const WorkCard = ({ work, index, useHorizontalLayout, isFeaturedLayout }) => {
             </h3>
 
             <div className="flex flex-wrap gap-3 mb-6">
-              {work.tags.map((tag, tagIndex) => (
+              {work.tags.map((tag) => (
                 <span
                   key={`${work.name}-${tag.name}`}
                   className={`text-base font-medium ${tag.color} bg-gray-800 px-3 py-1 rounded-full flex items-center gap-2`}
@@ -378,7 +375,6 @@ const WorkCard = ({ work, index, useHorizontalLayout, isFeaturedLayout }) => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
       >
         <div className="bg-gray-900 p-5 rounded-2xl w-full relative overflow-hidden transition-all duration-500 hover:scale-[1.02] md:hover:shadow-2xl flex flex-col md:flex-row h-full border-2 border-transparent hover:border-purple-500">
           <div
@@ -449,9 +445,7 @@ const WorkCard = ({ work, index, useHorizontalLayout, isFeaturedLayout }) => {
                   <span
                     key={`${work.name}-${tag.name}`}
                     className={`text-sm font-medium ${tag.color} bg-gray-800 px-3 py-1 rounded-full transition-all duration-300 hover:scale-105 hover:bg-gray-700 flex items-center gap-2`}
-                    style={{
-                      animationDelay: `${tagIndex * 100}ms`,
-                    }}
+                    style={{ animationDelay: `${tagIndex * 100}ms` }}
                   >
                     {tag.icon}
                     {tag.name}
@@ -495,7 +489,6 @@ const WorkCard = ({ work, index, useHorizontalLayout, isFeaturedLayout }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
     >
       <div className="bg-gray-900 p-5 rounded-2xl w-full relative overflow-hidden transition-all duration-500 hover:scale-[1.02] md:hover:shadow-2xl h-full flex flex-col border-2 border-transparent hover:border-purple-500">
         <div
@@ -564,9 +557,7 @@ const WorkCard = ({ work, index, useHorizontalLayout, isFeaturedLayout }) => {
                 <span
                   key={`${work.name}-${tag.name}`}
                   className={`text-sm font-medium ${tag.color} bg-gray-800 px-3 py-1 rounded-full transition-all duration-300 hover:scale-105 hover:bg-gray-700 flex items-center gap-2`}
-                  style={{
-                    animationDelay: `${tagIndex * 100}ms`,
-                  }}
+                  style={{ animationDelay: `${tagIndex * 100}ms` }}
                 >
                   {tag.icon}
                   {tag.name}
@@ -611,11 +602,11 @@ const Works = () => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    return () => window.removeEventListener('resize', checkMobile);
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
   }, []);
 
   useEffect(() => {
@@ -667,9 +658,7 @@ const Works = () => {
         >
           <div
             className={`text-left transition-all duration-1000 transform ${
-              isVisible
-                ? "opacity-100 translate-y-0"
-                : "opacity-0 translate-y-10"
+              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
             }`}
           >
             <p className="text-gray-400 text-lg font-medium tracking-wider uppercase mb-2">
@@ -719,9 +708,7 @@ const Works = () => {
           {filteredWorks.map((work, index) => (
             <div
               key={work.id}
-              className={
-                work.featured && filter === "all" ? "md:col-span-full" : ""
-              }
+              className={work.featured && filter === "all" ? "md:col-span-full" : ""}
             >
               <WorkCard
                 work={work}
@@ -742,30 +729,30 @@ const Works = () => {
             { number: works.length, label: "Projects Completed" },
             {
               number: works.filter((w) => w.category === "web").length,
-              label: "Web Applications"
+              label: "Web Applications",
             },
             {
               number: works.filter((w) => w.category === "ml").length,
-              label: "AI Projects"
+              label: "AI Projects",
             },
             {
               number: works.filter((w) => w.featured).length,
-              label: "Featured Works"
+              label: "Featured Works",
             },
-        ].map((stat, index) => (
-          <div key={index} className="text-center group">
-            <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-              {stat.number}+
+          ].map((stat, index) => (
+            <div key={index} className="text-center group">
+              <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+                {stat.number}+
+              </div>
+              <div className="text-gray-400 text-sm font-medium uppercase tracking-wider">
+                {stat.label}
+              </div>
             </div>
-            <div className="text-gray-400 text-sm font-medium uppercase tracking-wider">
-              {stat.label}
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default Works;
