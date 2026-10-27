@@ -129,7 +129,7 @@ const works = [
     description:
       "A machine learning-based symptom analysis application that estimates possible health conditions from user-provided symptoms and presents prediction results through a web interface.",
     category: "ml",
-    image: "gem.png",
+    image: "dis.png",
     tags: [
       { name: "React", color: "text-cyan-400", icon: <Code className="w-4 h-4" /> },
       { name: "Python", color: "text-purple-400", icon: <Globe className="w-4 h-4" /> },
