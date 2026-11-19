@@ -121,7 +121,7 @@ const works = [
       { name: "React + Vite", color: "text-cyan-400", icon: <Code className="w-4 h-4" /> },
     ],
     source_code_link: "https://github.com/kamesh2103/Kalm_ChatBot.git",
-    live_link: "https://kalm-i8mol02c4-kmmk.vercel.app",
+    live_link: "https://kalm-ai-ten.vercel.app",
   },
   {
     id: 8,
